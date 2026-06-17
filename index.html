@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CabinCast</title>
+  <meta name="description" content="CabinCast mirrors your iPhone screen to the Tesla browser over your iPhone hotspot.">
+  <link rel="icon" href="assets/cabincast-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="CabinCast home">
+      <img src="assets/cabincast-icon.png" alt="" width="40" height="40">
+      <span>CabinCast</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>Mirror your iPhone screen to the Tesla browser.</h1>
+        <p>
+          CabinCast uses your iPhone Personal Hotspot and a local viewer page so
+          your Tesla browser can show what is on your iPhone screen.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="#setup">Setup</a>
+          <a class="button secondary" href="support.html">Get Support</a>
+        </div>
+      </div>
+
+      <div class="device-scene" aria-label="CabinCast phone and Tesla browser preview">
+        <div class="phone-frame">
+          <div class="phone-screen">
+            <img src="assets/cabincast-icon.png" alt="" width="72" height="72">
+            <strong>CabinCast</strong>
+            <span>Start Casting</span>
+            <small>Viewer: WebRTC</small>
+          </div>
+        </div>
+        <div class="tesla-frame">
+          <div class="browser-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <em>240.3.3.3:8080</em>
+          </div>
+          <div class="viewer">
+            <div class="playfield">iPhone Screen</div>
+            <div class="viewer-controls">
+              <span>WebRTC</span>
+              <span>Reset Stream</span>
+              <span>Canvas Viewer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="setup">
+      <div class="section-heading">
+        <h2>Basic setup</h2>
+        <p>Use CabinCast only when it is safe and legal to use the vehicle browser.</p>
+      </div>
+      <div class="steps">
+        <article>
+          <span>1</span>
+          <h3>Start casting on iPhone</h3>
+          <p>Open CabinCast, start the local connection, and begin the iOS screen broadcast.</p>
+        </article>
+        <article>
+          <span>2</span>
+          <h3>Connect the Tesla</h3>
+          <p>Connect the Tesla to the iPhone Personal Hotspot.</p>
+        </article>
+        <article>
+          <span>3</span>
+          <h3>Open the viewer</h3>
+          <p>Open <code>http://240.3.3.3:8080</code> in the Tesla browser.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split">
+      <div>
+        <h2>Designed around Tesla browser limits</h2>
+        <p>
+          CabinCast includes multiple viewer modes for different conditions:
+          WebRTC for the normal path, software decode fallback paths for
+          compatibility, and diagnostics when the connection needs troubleshooting.
+        </p>
+      </div>
+      <div class="note">
+        <strong>View-only</strong>
+        <p>CabinCast shows the iPhone screen. It does not control iPhone apps from the vehicle screen.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 CabinCast</span>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </footer>
+</body>
+</html>
