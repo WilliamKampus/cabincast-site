@@ -11,7 +11,7 @@
 <body>
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="CabinCast home">
-      <img src="assets/cabincast-icon.png" alt="" width="44" height="44">
+      <img src="assets/cabincast-icon.png" alt="" width="40" height="40">
       <span>CabinCast</span>
     </a>
     <nav aria-label="Primary navigation">
@@ -21,102 +21,73 @@
     </nav>
   </header>
 
-  <main class="site-shell page-shell">
-    <div class="content-column">
-      <section class="feature-section">
-        <h1 class="section-title"><span>Support</span></h1>
-        <article class="featured-card text-card">
-          <h2>Use these checks first when the Tesla browser does not load or the stream does not move.</h2>
-          <p>
-            Most CabinCast issues come down to the hotspot, the exact viewer
-            address, the selected mode, or phone heat during higher-quality
-            streaming.
-          </p>
-        </article>
-      </section>
-
-      <section class="feature-section">
-        <h2 class="section-title"><span>Connection</span></h2>
-        <div class="article-grid support-grid">
-          <article class="article-card">
-            <h3>Connection checklist</h3>
-            <ul>
-              <li>Confirm the Tesla is connected to the iPhone Personal Hotspot.</li>
-              <li>Use <code>http://240.3.3.3:8080</code>, not <code>https://</code>.</li>
-              <li>Approve the iOS local network or VPN prompt if it appears.</li>
-              <li>Restart the CabinCast broadcast if the viewer loads but video does not move.</li>
-            </ul>
-          </article>
-
-          <article class="article-card">
-            <h3>Mode checks</h3>
-            <ul>
-              <li>Use Stable Mode first when setting up a new car or phone.</li>
-              <li>Switch to Quality Mode only after Stable Mode is moving cleanly.</li>
-              <li>Supporter PRO Codec, High Quality, and Smooth Mode depend on the hotspot link and phone heat.</li>
-              <li>If the phone reports heat warnings, lower quality before testing again.</li>
-            </ul>
-          </article>
-
-          <article class="article-card">
-            <h3>Fullscreen</h3>
-            <ul>
-              <li>True fullscreen is a Supporter feature in the Tesla browser.</li>
-              <li>The viewer may show a bright-screen warning before opening fullscreen.</li>
-              <li>If fullscreen opens but the stream stops, return to the viewer and use Reset Stream.</li>
-            </ul>
-          </article>
-
-          <article class="article-card">
-            <h3>Known limits</h3>
-            <ul>
-              <li>CabinCast is view-only and cannot control iPhone apps from the Tesla screen.</li>
-              <li>DRM-protected video may appear black because iOS blocks protected screen capture.</li>
-              <li>Use the Tesla browser only while parked and according to local laws.</li>
-              <li>Use Bluetooth or the iPhone for normal audio.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="feature-section">
-        <h2 class="section-title"><span>Contact</span></h2>
-        <article class="support-panel">
-          <p>
-            For support, email
-            <a href="mailto:support@wirurun.com">support@wirurun.com</a>.
-            Include your iPhone model, iOS version, Tesla software version,
-            selected CabinCast mode, and what happened after opening the viewer
-            URL.
-          </p>
-        </article>
-      </section>
-    </div>
-
-    <aside class="sidebar" aria-label="CabinCast support shortcuts">
-      <section class="sidebar-card profile-card">
-        <img src="assets/cabincast-icon.png" alt="" width="76" height="76">
-        <h2>CabinCast</h2>
-        <p>Support for local iPhone to Tesla browser mirroring.</p>
-        <a class="pill-button primary" href="mailto:support@wirurun.com">Email Support</a>
-      </section>
-
-      <section class="sidebar-card url-card">
-        <h2>Viewer URL</h2>
+  <main>
+    <section class="page-hero">
+      <div>
+        <h1>Support</h1>
+        <p>
+          Most CabinCast issues come down to the hotspot, the exact viewer URL,
+          selected mode, or phone heat during higher-quality streaming.
+        </p>
+      </div>
+      <aside class="url-tile">
+        <span>Viewer URL</span>
         <code>http://240.3.3.3:8080</code>
-        <p>Use HTTP with the explicit port.</p>
-      </section>
+      </aside>
+    </section>
 
-      <section class="sidebar-card quick-links">
-        <h2>Quick Links</h2>
-        <div class="link-tiles">
-          <a href="index.html#setup">Setup</a>
-          <a href="index.html#modes">Modes</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="mailto:support@wirurun.com">Email</a>
-        </div>
-      </section>
-    </aside>
+    <section class="support-layout">
+      <div class="support-list">
+        <article class="support-card">
+          <h2>Connection checklist</h2>
+          <ul>
+            <li>Confirm the Tesla is connected to the iPhone Personal Hotspot.</li>
+            <li>Use <code>http://240.3.3.3:8080</code>, not <code>https://</code>.</li>
+            <li>Approve the iOS local network or VPN prompt if it appears.</li>
+            <li>Restart the CabinCast broadcast if the viewer loads but video does not move.</li>
+          </ul>
+        </article>
+
+        <article class="support-card">
+          <h2>Mode checks</h2>
+          <ul>
+            <li>Use Stable Mode first when setting up a new car or phone.</li>
+            <li>Switch to Quality Mode only after Stable Mode is moving cleanly.</li>
+            <li>Supporter PRO Codec, High Quality, and Smooth Mode depend on the hotspot link and phone heat.</li>
+            <li>If the phone reports heat warnings, lower quality before testing again.</li>
+          </ul>
+        </article>
+
+        <article class="support-card">
+          <h2>Fullscreen</h2>
+          <ul>
+            <li>True fullscreen is a Supporter feature in the Tesla browser.</li>
+            <li>The viewer may show a bright-screen warning before opening fullscreen.</li>
+            <li>If fullscreen opens but the stream stops, return to the viewer and use Reset Stream.</li>
+          </ul>
+        </article>
+
+        <article class="support-card">
+          <h2>Known limits</h2>
+          <ul>
+            <li>CabinCast is view-only and cannot control iPhone apps from the Tesla screen.</li>
+            <li>DRM-protected video may appear black because iOS blocks protected screen capture.</li>
+            <li>Use the Tesla browser only while parked and according to local laws.</li>
+            <li>Use Bluetooth or the iPhone for normal audio.</li>
+          </ul>
+        </article>
+      </div>
+
+      <aside class="support-side">
+        <img src="assets/viewer-screen.png" alt="CabinCast browser viewer showing live controls." loading="lazy">
+        <h2>What to include when emailing</h2>
+        <p>
+          Send your iPhone model, iOS version, Tesla software version, selected
+          CabinCast mode, and what happened after opening the viewer URL.
+        </p>
+        <a class="button primary" href="mailto:support@wirurun.com">Email support</a>
+      </aside>
+    </section>
   </main>
 
   <footer class="site-footer">
