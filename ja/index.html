@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CabinCast</title>
+  <meta name="description" content="CabinCast は iPhone の画面をパーソナルホットスポット経由で Tesla ブラウザに表示します。">
+  <link rel="icon" href="../assets/cabincast-icon.png">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="CabinCast ホーム">
+      <img src="../assets/cabincast-icon.png" alt="" width="40" height="40">
+      <span>CabinCast</span>
+    </a>
+    <div class="header-actions">
+      <nav aria-label="メインナビゲーション">
+        <a href="#setup">設定</a>
+        <a href="#modes">モード</a>
+        <a href="support.html">サポート</a>
+        <a href="privacy.html">プライバシー</a>
+      </nav>
+      <label class="language-picker">
+        <span>言語</span>
+        <select aria-label="言語セレクター" onchange="if (this.value) window.location.href = this.value">
+          <option value="../index.html">English</option>
+          <option value="index.html" selected>日本語</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="cabincast">
+      <div class="hero-copy">
+        <h1>iPhone の画面を Tesla ブラウザに表示。</h1>
+        <p>
+          CabinCast は iPhone 上でローカルの iOS ReplayKit ブロードキャストを開始し、
+          パーソナルホットスポット経由で Tesla ブラウザから開けるビューアページを配信します。
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#setup">設定方法を見る</a>
+          <a class="button secondary" href="support.html">サポートを開く</a>
+        </div>
+        <div class="hero-url" aria-label="主なビューア URL">
+          <span>主なビューア URL</span>
+          <code>http://240.3.3.3:8080</code>
+        </div>
+      </div>
+
+      <div class="hero-media" aria-label="CabinCast アプリと Tesla ビューアの表示例">
+        <figure class="media-phone">
+          <img src="../assets/app-screen.png" alt="ビューア URL、キャスト開始、ストリームモードを表示している CabinCast アプリ画面。">
+          <figcaption>iOS Simulator で実行中の実際の CabinCast アプリ画面。</figcaption>
+        </figure>
+        <figure class="media-browser">
+          <img src="../assets/viewer-screen.png" alt="Tesla 風センターディスプレイに表示された CabinCast ビューアと、ミラーリングされた iPhone ホーム画面。">
+          <figcaption>実際の Simulator ホーム画面を使った Tesla 風センターディスプレイ表示。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="flow-section" id="setup">
+      <div class="section-heading">
+        <h2>iPhone から Tesla まで、ローカルで 3 ステップ。</h2>
+        <p>
+          Tesla を iPhone のパーソナルホットスポットに接続してから、
+          ブラウザでローカルのビューアアドレスを開きます。HTTPS ではなく <code>http://</code> を使います。
+        </p>
+      </div>
+      <div class="setup-flow">
+        <article>
+          <span>01</span>
+          <h3>CabinCast を開始</h3>
+          <p>iPhone で CabinCast を開き、キャスト開始をタップして iOS のブロードキャスト確認を許可します。</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Tesla を接続</h3>
+          <p>Tesla の Wi-Fi から iPhone のパーソナルホットスポットに接続し、同じローカル経路にします。</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>ビューアを開く</h3>
+          <p>Tesla ブラウザで <code>http://240.3.3.3:8080</code> を入力し、必要に応じて Reset Stream を使います。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="split-section" id="modes">
+      <div class="section-heading compact">
+        <h2>無料モードはシンプルに。サポーターモードは詳細な調整を解放します。</h2>
+      </div>
+      <div class="mode-columns">
+        <article class="mode-panel free">
+          <h3>無料モード</h3>
+          <p>
+            Stable Mode と Quality Mode は、基本の 720p/30 ミラーリング経路を提供します。
+            無料モードでは、最も安定して開始するために停車中にミラーリングを開始してください。
+          </p>
+          <ul>
+            <li>初回設定と安定性には Stable Mode。</li>
+            <li>よりシャープな無料ストリームには Quality Mode。</li>
+            <li>ローカルビューアでリセット、比率、情報、フルスクリーン状態を操作できます。</li>
+          </ul>
+        </article>
+        <article class="mode-panel supporter">
+          <h3>サポーターモード</h3>
+          <p>
+            PRO Codec は、より高品質なオプションとエキスパート向けの調整を使える新しい経路です。
+            継続的な開発を支援したい方向けに用意されています。
+          </p>
+          <ul>
+            <li>PRO Codec と High Quality 900p/30。</li>
+            <li>検証中の Smooth Mode 900p/60。</li>
+            <li>True fullscreen、手動アスペクト比、アクセントカラー、エキスパート設定。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="safety-section" id="support">
+      <div class="support-copy">
+        <h2>Tesla ブラウザの実際の制限に合わせて設計。</h2>
+        <p>
+          CabinCast は表示専用です。iPhone の画面をブラウザに表示できますが、
+          車両画面から iPhone アプリを操作することはできません。音声は通常どおり Bluetooth または iPhone から再生します。
+        </p>
+      </div>
+      <div class="support-grid">
+        <article>
+          <h3>発熱に注意</h3>
+          <p>iPhone が熱くなった場合は、品質を下げるか Stable Mode に戻してから再度テストしてください。</p>
+        </article>
+        <article>
+          <h3>ブラウザ向け</h3>
+          <p>明示的なポート付きの HTTP と、ローカルホットスポット経路を使います。HTTPS はビューア経路ではありません。</p>
+        </article>
+        <article>
+          <h3>画面収録の制限</h3>
+          <p>DRM 保護された動画は、iOS の画面収録制限により黒く表示される場合があります。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="closing-section">
+      <img src="../assets/cabincast-icon.png" alt="" width="82" height="82">
+      <div>
+        <h2>ビューアが読み込まれませんか？</h2>
+        <p>ホットスポット、URL、モード、フルスクリーン、発熱のチェックリストを確認してください。</p>
+      </div>
+      <a class="button primary" href="support.html">サポートを見る</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 CabinCast</span>
+    <a href="support.html">サポート</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+  </footer>
+</body>
+</html>

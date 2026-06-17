@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CabinCast サポート</title>
+  <meta name="description" content="CabinCast のサポート情報。">
+  <link rel="icon" href="../assets/cabincast-icon.png">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="CabinCast ホーム">
+      <img src="../assets/cabincast-icon.png" alt="" width="40" height="40">
+      <span>CabinCast</span>
+    </a>
+    <div class="header-actions">
+      <nav aria-label="メインナビゲーション">
+        <a href="index.html">ホーム</a>
+        <a href="support.html" aria-current="page">サポート</a>
+        <a href="privacy.html">プライバシー</a>
+      </nav>
+      <label class="language-picker">
+        <span>言語</span>
+        <select aria-label="言語セレクター" onchange="if (this.value) window.location.href = this.value">
+          <option value="../support.html">English</option>
+          <option value="support.html" selected>日本語</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div>
+        <h1>サポート</h1>
+        <p>
+          CabinCast の問題の多くは、ホットスポット、正確なビューア URL、
+          選択中のモード、または高品質ストリーミング中の iPhone の発熱に関係します。
+        </p>
+      </div>
+      <aside class="url-tile">
+        <span>ビューア URL</span>
+        <code>http://240.3.3.3:8080</code>
+      </aside>
+    </section>
+
+    <section class="support-layout">
+      <div class="support-list">
+        <article class="support-card">
+          <h2>接続チェック</h2>
+          <ul>
+            <li>Tesla が iPhone のパーソナルホットスポットに接続されていることを確認します。</li>
+            <li><code>https://</code> ではなく <code>http://240.3.3.3:8080</code> を使います。</li>
+            <li>iOS のローカルネットワークまたは VPN の確認が表示された場合は許可します。</li>
+            <li>ビューアは読み込まれるのに映像が動かない場合は、CabinCast のブロードキャストを再開始します。</li>
+          </ul>
+        </article>
+
+        <article class="support-card">
+          <h2>モード確認</h2>
+          <ul>
+            <li>新しい車両や iPhone で設定する場合は、まず Stable Mode を使います。</li>
+            <li>Stable Mode が安定して動いてから Quality Mode に切り替えます。</li>
+            <li>サポーター向けの PRO Codec、High Quality、Smooth Mode は、ホットスポット接続と iPhone の発熱状態に左右されます。</li>
+            <li>発熱警告が出る場合は、品質を下げてから再度テストしてください。</li>
+          </ul>
+        </article>
+
+        <article class="support-card">
+          <h2>フルスクリーン</h2>
+          <ul>
+            <li>True fullscreen は Tesla ブラウザで使えるサポーター機能です。</li>
+            <li>フルスクリーンを開く前に、明るい画面についての警告が表示される場合があります。</li>
+            <li>フルスクリーン後にストリームが止まる場合は、ビューアに戻って Reset Stream を使います。</li>
+          </ul>
+        </article>
+
+        <article class="support-card">
+          <h2>既知の制限</h2>
+          <ul>
+            <li>CabinCast は表示専用で、Tesla 画面から iPhone アプリを操作することはできません。</li>
+            <li>DRM 保護された動画は、iOS の画面収録制限により黒く表示される場合があります。</li>
+            <li>Tesla ブラウザは停車中かつ地域の法令に従って使用してください。</li>
+            <li>音声は Bluetooth または iPhone から通常どおり再生してください。</li>
+          </ul>
+        </article>
+      </div>
+
+      <aside class="support-side">
+        <img src="../assets/viewer-screen.png" alt="Tesla 風センターディスプレイに表示された CabinCast ビューアと操作ボタン。" loading="lazy">
+        <h2>メールに含める情報</h2>
+        <p>
+          iPhone の機種、iOS バージョン、Tesla ソフトウェアバージョン、
+          選択した CabinCast モード、ビューア URL を開いた後に起きたことを送ってください。
+        </p>
+        <a class="button primary" href="mailto:support@wirurun.com">サポートにメール</a>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>&copy; 2026 CabinCast</span>
+    <a href="index.html">ホーム</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+  </footer>
+</body>
+</html>

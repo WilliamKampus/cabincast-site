@@ -39,6 +39,10 @@ body {
   line-height: 1.6;
 }
 
+html:lang(ja) body {
+  line-break: strict;
+}
+
 a {
   color: inherit;
 }
@@ -194,6 +198,12 @@ main {
   line-height: 0.96;
   font-weight: 870;
   letter-spacing: 0;
+}
+
+html:lang(ja) .hero-copy h1,
+html:lang(ja) .page-hero h1 {
+  font-size: clamp(2.65rem, 5.5vw, 5.2rem);
+  line-height: 1.08;
 }
 
 .hero-copy p,
@@ -729,6 +739,12 @@ figcaption {
   .page-hero h1 {
     font-size: clamp(2.05rem, 9.5vw, 2.4rem);
     overflow-wrap: break-word;
+  }
+
+  html:lang(ja) .hero-copy h1,
+  html:lang(ja) .page-hero h1 {
+    font-size: clamp(2rem, 8.8vw, 2.34rem);
+    line-height: 1.16;
   }
 
   .hero-copy p,

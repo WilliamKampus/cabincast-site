@@ -22,9 +22,9 @@
       </nav>
       <label class="language-picker">
         <span>Language</span>
-        <select aria-label="Language selector">
-          <option selected>English</option>
-          <option disabled>Japanese coming soon</option>
+        <select aria-label="Language selector" onchange="if (this.value) window.location.href = this.value">
+          <option value="privacy.html" selected>English</option>
+          <option value="ja/privacy.html">日本語</option>
         </select>
       </label>
     </div>

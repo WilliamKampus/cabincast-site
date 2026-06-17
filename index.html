@@ -23,9 +23,9 @@
       </nav>
       <label class="language-picker">
         <span>Language</span>
-        <select aria-label="Language selector">
-          <option selected>English</option>
-          <option disabled>Japanese coming soon</option>
+        <select aria-label="Language selector" onchange="if (this.value) window.location.href = this.value">
+          <option value="index.html" selected>English</option>
+          <option value="ja/index.html">日本語</option>
         </select>
       </label>
     </div>
@@ -56,8 +56,8 @@
           <figcaption>Actual CabinCast app running in the iOS Simulator.</figcaption>
         </figure>
         <figure class="media-browser">
-          <img src="assets/viewer-screen.png" alt="CabinCast viewer running in a browser-style screen with fullscreen and reset controls.">
-          <figcaption>Browser-rendered capture from the production CabinCast viewer UI.</figcaption>
+          <img src="assets/viewer-screen.png" alt="CabinCast viewer shown on a Tesla-style center display with an iPhone Home Screen mirrored inside.">
+          <figcaption>Tesla-style center display mockup using a real simulator Home Screen capture.</figcaption>
         </figure>
       </div>
     </section>
