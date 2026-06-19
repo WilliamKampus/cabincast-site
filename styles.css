@@ -408,6 +408,7 @@ html:lang(ja) .page-hero h1 {
 }
 
 .flow-section,
+.navigation-section,
 .split-section,
 .limits-section,
 .faq-section,
@@ -427,6 +428,7 @@ html:lang(ja) .page-hero h1 {
 }
 
 .section-heading h2,
+.navigation-copy h2,
 .limits-copy h2,
 .closing-section h2,
 .faq-section h2,
@@ -443,6 +445,7 @@ html:lang(ja) .page-hero h1 {
 }
 
 .section-heading p,
+.navigation-copy p,
 .limits-copy p,
 .closing-section p,
 .support-side p,
@@ -450,6 +453,15 @@ html:lang(ja) .page-hero h1 {
   margin: 18px 0 0;
   color: var(--muted);
   font-size: 1.08rem;
+}
+
+.section-kicker {
+  margin: 0 0 12px;
+  color: var(--red);
+  font-size: 0.84rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .setup-flow {
@@ -495,6 +507,56 @@ html:lang(ja) .page-hero h1 {
 .faq-grid p,
 .support-card p,
 .legal-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.navigation-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 30px;
+  align-items: start;
+}
+
+.navigation-copy {
+  min-width: 0;
+  padding: 38px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(145deg, rgba(79, 125, 255, 0.12), rgba(255, 52, 60, 0.08)),
+    var(--panel);
+  box-shadow: var(--soft-shadow);
+}
+
+.navigation-copy .section-kicker {
+  margin-top: 0;
+}
+
+.navigation-points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-content: start;
+}
+
+.navigation-points article {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(16, 20, 27, 0.84);
+  box-shadow: var(--soft-shadow);
+}
+
+.navigation-points h3 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-size: 1.22rem;
+  line-height: 1.18;
+}
+
+.navigation-points p {
   margin: 0;
   color: var(--muted);
 }
@@ -968,6 +1030,7 @@ html:lang(ja) .page-hero h1 {
   }
 
   .flow-section,
+  .navigation-section,
   .split-section,
   .limits-section,
   .faq-section,
@@ -978,9 +1041,15 @@ html:lang(ja) .page-hero h1 {
   }
 
   .setup-flow article,
+  .navigation-copy,
   .support-card,
   .legal-card {
     padding: 22px;
+  }
+
+  .navigation-section,
+  .navigation-points {
+    grid-template-columns: 1fr;
   }
 
   .feature-table {
