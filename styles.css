@@ -994,6 +994,20 @@ html:lang(ja) .page-hero h1 {
   .privacy-side h2 {
     font-size: 2rem;
     line-height: 1.08;
+    overflow-wrap: break-word;
+  }
+
+  html:lang(ja) .section-heading h2,
+  html:lang(ja) .navigation-copy h2,
+  html:lang(ja) .limits-copy h2,
+  html:lang(ja) .closing-section h2,
+  html:lang(ja) .faq-section h2,
+  html:lang(ja) .support-card h2,
+  html:lang(ja) .legal-card h2,
+  html:lang(ja) .support-side h2,
+  html:lang(ja) .privacy-side h2 {
+    font-size: 1.72rem;
+    line-height: 1.14;
   }
 
   .hero-actions {
@@ -1044,9 +1058,35 @@ html:lang(ja) .page-hero h1 {
 
   .setup-flow article,
   .navigation-copy,
+  .navigation-points article,
+  .limits-list article,
+  .faq-grid article,
   .support-card,
   .legal-card {
-    padding: 22px;
+    padding: 20px;
+  }
+
+  .setup-flow h3,
+  .navigation-points h3,
+  .limits-list h3,
+  .faq-grid h3 {
+    font-size: 1.12rem;
+    line-height: 1.22;
+    overflow-wrap: break-word;
+  }
+
+  .section-heading p,
+  .navigation-copy p,
+  .limits-copy p,
+  .closing-section p,
+  .setup-flow p,
+  .navigation-points p,
+  .limits-list p,
+  .faq-grid p,
+  .support-card p,
+  .legal-card p {
+    font-size: 0.98rem;
+    line-height: 1.55;
   }
 
   .navigation-section,
