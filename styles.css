@@ -265,6 +265,10 @@ html:lang(ja) .page-hero h1 {
   line-height: 0.9;
 }
 
+.hero-subline {
+  display: block;
+}
+
 .hero-copy p:not(.product-name),
 .page-hero p:not(.product-name) {
   max-width: 650px;
