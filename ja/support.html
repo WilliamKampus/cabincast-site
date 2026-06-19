@@ -6,6 +6,7 @@
   <title>CabinCast サポート</title>
   <meta name="description" content="CabinCast のサポート情報。">
   <link rel="icon" href="../assets/cabincast-icon.png">
+  <script src="../language.js"></script>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -20,11 +21,15 @@
         <a href="support.html" aria-current="page">サポート</a>
         <a href="privacy.html">プライバシー</a>
       </nav>
-      <label class="language-picker">
-        <span>言語</span>
-        <select aria-label="言語セレクター" onchange="if (this.value) window.location.href = this.value">
-          <option value="../support.html">English</option>
-          <option value="support.html" selected>日本語</option>
+      <label class="language-picker" title="言語">
+        <span class="sr-only">言語</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M3.6 9h16.8M3.6 15h16.8M12 3c2.3 2.4 3.5 5.4 3.5 9s-1.2 6.6-3.5 9M12 3c-2.3 2.4-3.5 5.4-3.5 9s1.2 6.6 3.5 9"></path>
+        </svg>
+        <select aria-label="言語セレクター" onchange="CabinCastLanguage.setLanguage(this.selectedOptions[0].lang, this.value)">
+          <option value="../support.html" lang="en">English</option>
+          <option value="support.html" lang="ja" selected>日本語</option>
         </select>
       </label>
     </div>
@@ -33,68 +38,96 @@
   <main>
     <section class="page-hero">
       <div>
-        <h1>サポート</h1>
+        <p class="product-name">CabinCastサポート</p>
+        <h1>
+          <span class="ja-line">困ったときは、</span>
+          <span class="ja-line">ここから確認。</span>
+        </h1>
         <p>
-          CabinCast の問題の多くは、ホットスポット、正確なビューア URL、
-          選択中のモード、または高品質ストリーミング中の iPhone の発熱に関係します。
+          ページが開かない、映像が動かない、表示が不安定。
+          多くの場合は、ホットスポット、ブラウザのアドレス、
+          iOSの画面共有許可、iPhoneの発熱を確認すると解決できます。
         </p>
       </div>
       <aside class="url-tile">
-        <span>ビューア URL</span>
+        <span>ブラウザのアドレス</span>
         <code>http://240.3.3.3:8080</code>
+        <small>http:// とポート8080を使います。</small>
       </aside>
     </section>
 
     <section class="support-layout">
       <div class="support-list">
         <article class="support-card">
-          <h2>接続チェック</h2>
+          <h2>まずは3ステップ</h2>
           <ul>
-            <li>Tesla が iPhone のパーソナルホットスポットに接続されていることを確認します。</li>
-            <li><code>https://</code> ではなく <code>http://240.3.3.3:8080</code> を使います。</li>
-            <li>iOS のローカルネットワークまたは VPN の確認が表示された場合は許可します。</li>
-            <li>ビューアは読み込まれるのに映像が動かない場合は、CabinCast のブロードキャストを再開始します。</li>
+            <li>TeslaをiPhoneのパーソナルホットスポットに接続します。</li>
+            <li>CabinCastを開き、画面共有を開始します。</li>
+            <li>Teslaブラウザで <code>http://240.3.3.3:8080</code> を開きます。</li>
           </ul>
         </article>
 
         <article class="support-card">
-          <h2>モード確認</h2>
+          <h2>ページが開かないとき</h2>
           <ul>
-            <li>新しい車両や iPhone で設定する場合は、まず Stable Mode を使います。</li>
-            <li>Stable Mode が安定して動いてから Quality Mode に切り替えます。</li>
-            <li>サポーター向けの PRO Codec、High Quality、Smooth Mode は、ホットスポット接続と iPhone の発熱状態に左右されます。</li>
-            <li>発熱警告が出る場合は、品質を下げてから再度テストしてください。</li>
+            <li>TeslaがiPhoneのホットスポットに接続されたままか確認します。</li>
+            <li><code>https://</code> ではなく <code>http://</code> を使います。</li>
+            <li>ポート番号 <code>8080</code> まで入力します。</li>
+            <li>iOSの許可画面が出た場合は、画面共有を許可します。</li>
+            <li>それでも開かない場合は、CabinCastとTeslaブラウザを開き直します。</li>
           </ul>
         </article>
 
         <article class="support-card">
-          <h2>フルスクリーン</h2>
+          <h2>映像が不安定なとき</h2>
           <ul>
-            <li>True fullscreen は Tesla ブラウザで使えるサポーター機能です。</li>
-            <li>フルスクリーンを開く前に、明るい画面についての警告が表示される場合があります。</li>
-            <li>フルスクリーン後にストリームが止まる場合は、ビューアに戻って Reset Stream を使います。</li>
+            <li>まず安定重視の画質オプションで試し、動いてから高画質を試します。</li>
+            <li>ホットスポットの状態やTeslaブラウザによって、滑らかさは変わります。</li>
+            <li>iPhoneが熱い場合は、低めの画質を選び、少し冷ましてください。</li>
+            <li>画面が止まった場合は、CabinCastで画面共有を止めてから再開します。</li>
           </ul>
         </article>
 
         <article class="support-card">
-          <h2>既知の制限</h2>
+          <h2>フルスクリーンとサポーター機能</h2>
           <ul>
-            <li>CabinCast は表示専用で、Tesla 画面から iPhone アプリを操作することはできません。</li>
-            <li>DRM 保護された動画は、iOS の画面収録制限により黒く表示される場合があります。</li>
-            <li>Tesla ブラウザは停車中かつ地域の法令に従って使用してください。</li>
-            <li>音声は Bluetooth または iPhone から通常どおり再生してください。</li>
+            <li>CabinCastは画面共有に無料で使えます。</li>
+            <li>サポーターパックは開発を支え、真のフルスクリーン、PRO Codec、詳細設定などの検証中の機能を使えるようにします。</li>
+            <li>検証中の機能が車内環境で不安定な場合は、安定重視の設定に戻してください。</li>
+          </ul>
+        </article>
+
+        <article class="support-card">
+          <h2>知っておくこと</h2>
+          <ul>
+            <li>CabinCastはiPhone画面を表示するアプリです。Tesla画面からiPhoneを操作することはできません。</li>
+            <li>保護された動画は、iOSの制限により黒く表示される場合があります。</li>
+            <li>安定性はiPhone、ホットスポット、Teslaブラウザ、発熱の状態によって変わります。</li>
+            <li>Teslaブラウザは安全に、地域の法令に従って使用してください。</li>
+          </ul>
+        </article>
+
+        <article class="support-card">
+          <h2>問い合わせ前に</h2>
+          <ul>
+            <li>iPhoneのモデルとiOSバージョン。</li>
+            <li>Teslaのソフトウェアバージョン。</li>
+            <li>選んだ画質オプション。</li>
+            <li>Teslaブラウザでページが開くか。</li>
+            <li>ページが開いたあと、画面が動くか。</li>
+            <li>問題が起きたとき、Tesla画面に何が表示されていたか。</li>
           </ul>
         </article>
       </div>
 
       <aside class="support-side">
-        <img src="../assets/tesla-dashboard-viewer.png" alt="Tesla 風センターディスプレイに表示された CabinCast ビューアと操作ボタン。" loading="lazy">
-        <h2>メールに含める情報</h2>
+        <img src="../assets/tesla-dashboard-viewer.png" alt="CabinCastがTesla風センターディスプレイに表示されている様子。" loading="lazy">
+        <h2>メールに含める内容</h2>
         <p>
-          iPhone の機種、iOS バージョン、Tesla ソフトウェアバージョン、
-          選択した CabinCast モード、ビューア URL を開いた後に起きたことを送ってください。
+          チェックリストの内容を送ってください。接続、許可、映像の動き、
+          発熱、既知の制限のどれに近い問題か確認しやすくなります。
         </p>
-        <a class="button primary" href="mailto:support@wirurun.com">サポートにメール</a>
+        <a class="button primary" href="mailto:cabincast-support@wirurun.com">メールで問い合わせる</a>
       </aside>
     </section>
   </main>

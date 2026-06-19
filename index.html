@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CabinCast</title>
-  <meta name="description" content="CabinCast mirrors your iPhone screen to the Tesla browser over your iPhone Personal Hotspot.">
+  <meta name="description" content="CabinCast shows your iPhone screen in the Tesla browser using your iPhone Personal Hotspot.">
   <link rel="icon" href="assets/cabincast-icon.png">
+  <script src="language.js"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,15 +18,18 @@
     <div class="header-actions">
       <nav aria-label="Primary navigation">
         <a href="#setup">Setup</a>
-        <a href="#modes">Modes</a>
         <a href="support.html">Support</a>
         <a href="privacy.html">Privacy</a>
       </nav>
-      <label class="language-picker">
-        <span>Language</span>
-        <select aria-label="Language selector" onchange="if (this.value) window.location.href = this.value">
-          <option value="index.html" selected>English</option>
-          <option value="ja/index.html">日本語</option>
+      <label class="language-picker" title="Language">
+        <span class="sr-only">Language</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M3.6 9h16.8M3.6 15h16.8M12 3c2.3 2.4 3.5 5.4 3.5 9s-1.2 6.6-3.5 9M12 3c-2.3 2.4-3.5 5.4-3.5 9s1.2 6.6 3.5 9"></path>
+        </svg>
+        <select aria-label="Language selector" onchange="CabinCastLanguage.setLanguage(this.selectedOptions[0].lang, this.value)">
+          <option value="index.html" lang="en" selected>English</option>
+          <option value="ja/index.html" lang="ja">日本語</option>
         </select>
       </label>
     </div>
@@ -34,114 +38,191 @@
   <main>
     <section class="hero" id="cabincast">
       <div class="hero-copy">
-        <h1>Mirror your iPhone screen to the Tesla browser.</h1>
+        <p class="product-name">CabinCast</p>
+        <h1>Your iPhone screen, on the <span class="hero-emphasis">big</span> Tesla display.</h1>
         <p>
-          CabinCast starts a local iOS ReplayKit broadcast on your iPhone and
-          serves a viewer page that the Tesla browser can open through Personal
-          Hotspot.
+          Share your iPhone screen to the Tesla browser over your iPhone
+          Personal Hotspot. CabinCast is free to use.
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="#setup">Set up mirroring</a>
-          <a class="button secondary" href="support.html">Open support</a>
-        </div>
-        <div class="hero-url" aria-label="Primary viewer URL">
-          <span>Primary viewer URL</span>
-          <code>http://240.3.3.3:8080</code>
+          <a class="button primary" href="#" aria-label="Download CabinCast on the App Store">Download on the App Store</a>
         </div>
       </div>
 
-      <div class="hero-media" aria-label="CabinCast app and Tesla viewer visuals">
-        <figure class="media-phone">
-          <img src="assets/app-screen.png" alt="CabinCast app screen showing the viewer URL, Start Casting, and stream modes.">
-          <figcaption>Actual CabinCast app running in the iOS Simulator.</figcaption>
-        </figure>
+      <div class="hero-media" aria-label="CabinCast app and Tesla browser visuals">
         <figure class="media-browser">
-          <img src="assets/tesla-dashboard-viewer.png" alt="CabinCast viewer shown on a Tesla-style center display with an iPhone Home Screen mirrored inside.">
-          <figcaption>Tesla-style center display mockup using a real simulator Home Screen capture.</figcaption>
+          <img src="assets/tesla-dashboard-viewer.png" alt="CabinCast shown on a Tesla-style center display with an iPhone Home Screen inside.">
+        </figure>
+        <figure class="media-phone">
+          <img src="assets/app-screen.png" alt="CabinCast app screen with the main start button.">
         </figure>
       </div>
     </section>
 
     <section class="flow-section" id="setup">
       <div class="section-heading">
-        <h2>From iPhone to Tesla in three local steps.</h2>
-        <p>
-          Keep the Tesla connected to the iPhone Personal Hotspot, then open the
-          local viewer address in the browser. Use <code>http://</code>, not HTTPS.
-        </p>
+        <h2>Simple setup. Just your iPhone and Tesla.</h2>
+        <p>Connect in three steps.</p>
       </div>
       <div class="setup-flow">
         <article>
           <span>01</span>
-          <h3>Start CabinCast</h3>
-          <p>Open CabinCast on iPhone, tap Start Casting, and approve the iOS broadcast prompt.</p>
+          <h3>Connect the Tesla to your iPhone hotspot</h3>
+          <p>Use Tesla Wi-Fi to join your iPhone Personal Hotspot.</p>
         </article>
         <article>
           <span>02</span>
-          <h3>Connect the Tesla</h3>
-          <p>Join the iPhone Personal Hotspot from Tesla Wi-Fi so both devices share the local route.</p>
+          <h3>Start CabinCast</h3>
+          <p>Open the app, tap the start button, and allow screen sharing when iOS asks.</p>
         </article>
         <article>
           <span>03</span>
-          <h3>Open the viewer</h3>
-          <p>Type <code>http://240.3.3.3:8080</code> in the Tesla browser and use Reset Stream if needed.</p>
+          <h3>Open the Tesla browser</h3>
+          <p>Open the browser in your Tesla and view your iPhone screen on the big display.</p>
         </article>
       </div>
     </section>
 
     <section class="split-section" id="modes">
       <div class="section-heading compact">
-        <h2>Free modes stay simple. Supporter modes unlock the deeper controls.</h2>
+        <h2>Free casting for everyone.</h2>
+        <p>
+          CabinCast is free to use. If you want to support the app, Supporter
+          mode helps fund future updates and unlocks new experimental features.
+        </p>
       </div>
-      <div class="mode-columns">
-        <article class="mode-panel free">
-          <h3>Free Modes</h3>
-          <p>
-            Stable Mode and Quality Mode provide the basic 720p/30 mirroring
-            path. Start mirroring while parked for the most reliable free-mode start.
-          </p>
-          <ul>
-            <li>Stable Mode for first setup and reliability.</li>
-            <li>Quality Mode for a sharper free stream.</li>
-            <li>Local viewer controls for reset, ratio, info, and fullscreen state.</li>
-          </ul>
+      <div class="feature-table" aria-label="Free app and Supporter feature comparison">
+        <div class="feature-row table-head">
+          <div>Feature</div>
+          <div>Free to use</div>
+          <div>Support the app</div>
+        </div>
+        <div class="feature-row">
+          <div>Screen sharing</div>
+          <div>Share your iPhone screen to the Tesla browser for free.</div>
+          <div>Help keep CabinCast improving.</div>
+        </div>
+        <div class="feature-row">
+          <div>Simple settings</div>
+          <div>Simple options for everyday screen sharing.</div>
+          <div>Try newer viewing experiments as they become available.</div>
+        </div>
+        <div class="feature-row">
+          <div>Tesla screen</div>
+          <div>Open CabinCast in the Tesla browser with standard viewing tools.</div>
+          <div>Try experimental display tools like true fullscreen and screen fit options.</div>
+        </div>
+        <div class="feature-row">
+          <div>New features</div>
+          <div>May arrive in a future update.</div>
+          <div>Use the newest experimental features now.</div>
+        </div>
+      </div>
+      <div class="feature-mobile-groups" aria-label="Free app and Supporter feature comparison">
+        <article>
+          <h3>Free to use</h3>
+          <dl>
+            <div>
+              <dt>Screen sharing</dt>
+              <dd>Share your iPhone screen to the Tesla browser for free.</dd>
+            </div>
+            <div>
+              <dt>Simple settings</dt>
+              <dd>Simple options for everyday screen sharing.</dd>
+            </div>
+            <div>
+              <dt>Tesla screen</dt>
+              <dd>Open CabinCast in the Tesla browser with standard viewing tools.</dd>
+            </div>
+            <div>
+              <dt>New features</dt>
+              <dd>May arrive in a future update.</dd>
+            </div>
+          </dl>
         </article>
-        <article class="mode-panel supporter">
-          <h3>Supporter Modes</h3>
-          <p>
-            PRO Codec opens the newer tuning lane with higher-quality options
-            and expert controls for people who want to support ongoing development.
-          </p>
-          <ul>
-            <li>PRO Codec plus High Quality 900p/30.</li>
-            <li>Experimental Smooth Mode at 900p/60.</li>
-            <li>True fullscreen, manual aspect ratio, accent colors, and expert controls.</li>
-          </ul>
+        <article>
+          <h3>Support the app</h3>
+          <dl>
+            <div>
+              <dt>Screen sharing</dt>
+              <dd>Help keep CabinCast improving.</dd>
+            </div>
+            <div>
+              <dt>Simple settings</dt>
+              <dd>Try newer viewing experiments as they become available.</dd>
+            </div>
+            <div>
+              <dt>Tesla screen</dt>
+              <dd>Try experimental display tools like true fullscreen and screen fit options.</dd>
+            </div>
+            <div>
+              <dt>New features</dt>
+              <dd>Use the newest experimental features now.</dd>
+            </div>
+          </dl>
         </article>
       </div>
     </section>
 
-    <section class="safety-section" id="support">
-      <div class="support-copy">
-        <h2>Built around real Tesla browser limits.</h2>
+    <section class="limits-section">
+      <div class="limits-copy">
+        <h2>Local screen sharing over your iPhone hotspot.</h2>
         <p>
-          CabinCast is view-only. It shows the iPhone screen in the browser, but
-          it cannot control iPhone apps from the vehicle screen. Audio remains
-          normal through Bluetooth or the iPhone.
+          CabinCast shares your screen from your iPhone to your Tesla over
+          Personal Hotspot. The screen is not sent through the internet, so it
+          can keep working without relying on cellular data after the hotspot
+          connection is active.
         </p>
       </div>
-      <div class="support-grid">
+      <div class="limits-list">
         <article>
-          <h3>Heat aware</h3>
-          <p>When the iPhone gets hot, lower quality or return to Stable Mode before testing again.</p>
+          <h3>Direct connection</h3>
+          <p>Your iPhone and Tesla talk to each other through Personal Hotspot.</p>
         </article>
         <article>
-          <h3>Browser safe</h3>
-          <p>Use HTTP with the explicit port and the local hotspot route. HTTPS is not the viewer path.</p>
+          <h3>No mobile data needed</h3>
+          <p>Screen sharing does not need mobile data.</p>
         </article>
         <article>
-          <h3>Screen capture limits</h3>
-          <p>DRM-protected video may appear black because iOS blocks protected screen capture.</p>
+          <h3>Know before driving</h3>
+          <p>CabinCast is view-only. Touch control stays on the iPhone, and protected video may appear black.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="faq-section" aria-labelledby="faq-title">
+      <div class="section-heading compact">
+        <h2 id="faq-title">Q&A</h2>
+        <p>Quick answers before you contact support.</p>
+      </div>
+      <div class="faq-grid">
+        <article>
+          <h3>Can I use CabinCast for free?</h3>
+          <p>Yes. CabinCast is free to use for iPhone-to-Tesla screen sharing.</p>
+        </article>
+        <article>
+          <h3>Does it use mobile data?</h3>
+          <p>No. Your iPhone shares the screen with the Tesla over Personal Hotspot.</p>
+        </article>
+        <article>
+          <h3>Will it work in tunnels?</h3>
+          <p>Yes. Once the Tesla is connected to your hotspot, CabinCast can keep working without cellular signal.</p>
+        </article>
+        <article>
+          <h3>Why can smoothness change?</h3>
+          <p>Hotspot quality, the Tesla browser, iPhone heat, and the selected quality option can all make a difference.</p>
+        </article>
+        <article>
+          <h3>Why support the app?</h3>
+          <p>Support helps fund development and gives you access to new experimental features.</p>
+        </article>
+        <article>
+          <h3>Can heat lower quality?</h3>
+          <p>Yes. If the iPhone gets hot, a lower-quality option can help keep things stable.</p>
+        </article>
+        <article>
+          <h3>Can I control the iPhone from the Tesla screen?</h3>
+          <p>No. CabinCast shows the screen only. You still control everything on the iPhone.</p>
         </article>
       </div>
     </section>
@@ -149,10 +230,10 @@
     <section class="closing-section">
       <img src="assets/cabincast-icon.png" alt="" width="82" height="82">
       <div>
-        <h2>Need help getting the viewer to load?</h2>
-        <p>Use the support checklist for hotspot, URL, mode, fullscreen, and heat checks.</p>
+        <h2>Need CabinCast to load reliably?</h2>
+        <p>Use the support page for the browser address, hotspot checks, fullscreen help, and known limits.</p>
       </div>
-      <a class="button primary" href="support.html">Go to support</a>
+      <a class="button primary" href="support.html">Open support</a>
     </section>
   </main>
 

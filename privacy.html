@@ -6,6 +6,7 @@
   <title>CabinCast Privacy Policy</title>
   <meta name="description" content="Privacy policy for CabinCast.">
   <link rel="icon" href="assets/cabincast-icon.png">
+  <script src="language.js"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,11 +21,15 @@
         <a href="support.html">Support</a>
         <a href="privacy.html" aria-current="page">Privacy</a>
       </nav>
-      <label class="language-picker">
-        <span>Language</span>
-        <select aria-label="Language selector" onchange="if (this.value) window.location.href = this.value">
-          <option value="privacy.html" selected>English</option>
-          <option value="ja/privacy.html">日本語</option>
+      <label class="language-picker" title="Language">
+        <span class="sr-only">Language</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M3.6 9h16.8M3.6 15h16.8M12 3c2.3 2.4 3.5 5.4 3.5 9s-1.2 6.6-3.5 9M12 3c-2.3 2.4-3.5 5.4-3.5 9s1.2 6.6 3.5 9"></path>
+        </svg>
+        <select aria-label="Language selector" onchange="CabinCastLanguage.setLanguage(this.selectedOptions[0].lang, this.value)">
+          <option value="privacy.html" lang="en" selected>English</option>
+          <option value="ja/privacy.html" lang="ja">日本語</option>
         </select>
       </label>
     </div>
@@ -35,14 +40,14 @@
       <div>
         <h1>Privacy Policy</h1>
         <p>
-          CabinCast is designed to run locally on your iPhone. It serves a local
-          viewer page to devices connected to your iPhone Personal Hotspot and
-          does not upload your screen content to a CabinCast server.
+          CabinCast is built to keep screen sharing between your iPhone and the
+          devices connected to your Personal Hotspot. It does not upload your
+          screen to a CabinCast cloud server.
         </p>
       </div>
       <aside class="url-tile quiet">
         <span>Effective</span>
-        <strong>June 16, 2026</strong>
+        <strong>June 18, 2026</strong>
       </aside>
     </section>
 
@@ -50,24 +55,43 @@
       <article class="legal-card">
         <h2>Data collection</h2>
         <p>
-          CabinCast does not collect, sell, or share personal data. The app is
-          designed to run locally on your iPhone and serve a local viewer page
-          to devices connected to your iPhone Personal Hotspot.
+          CabinCast does not sell personal data. By default, screen sharing
+          stays between your iPhone and devices connected to your iPhone
+          Personal Hotspot, and anonymous diagnostics are turned off.
+        </p>
+        <p>
+          If you turn on anonymous diagnostics, CabinCast may send compact
+          casting session summaries after use to CabinCast's backend hosted on
+          Supabase. These summaries help improve default settings, reliability,
+          and performance patterns. They can include app version, coarse device
+          category, language group, iOS version, selected streaming mode,
+          connection outcome, frame/drop/stall counts, thermal state, and
+          similar performance numbers.
+        </p>
+        <p>
+          Anonymous diagnostics do not include your screen content, audio,
+          URLs, precise location, contacts, Apple account information, raw IP
+          addresses, or Tesla account details.
+        </p>
+        <p>
+          You can turn diagnostics off and reset pending diagnostics plus the
+          anonymous diagnostics ID from Settings. CabinCast may also keep a
+          local count of uploaded diagnostic summaries so the app can show your
+          recent contribution history; this count stays on your device.
         </p>
 
-        <h2>Screen broadcast</h2>
+        <h2>Screen sharing</h2>
         <p>
-          CabinCast uses iOS ReplayKit so you can broadcast your screen to the
-          local CabinCast viewer. The screen stream is served locally from your
-          device. CabinCast does not upload your screen content to a CabinCast
-          server.
+          CabinCast uses the iOS screen sharing system so your Tesla browser can
+          show your iPhone screen. CabinCast does not upload your screen content
+          to a CabinCast server.
         </p>
 
         <h2>Local network</h2>
         <p>
-          CabinCast uses local network access to make the viewer page reachable
-          from another device on your iPhone Personal Hotspot. This traffic is
-          used for the local viewing session.
+          CabinCast uses local network access so another device on your iPhone
+          Personal Hotspot can open the CabinCast page. This is used only for
+          the screen sharing session.
         </p>
 
         <h2>Purchases</h2>
@@ -85,7 +109,7 @@
         <h2>Contact</h2>
         <p>
           Questions about this policy can be sent to
-          <a href="mailto:support@wirurun.com">support@wirurun.com</a>.
+          <a href="mailto:cabincast-support@wirurun.com">cabincast-support@wirurun.com</a>.
         </p>
       </article>
 
@@ -93,8 +117,8 @@
         <img src="assets/cabincast-icon.png" alt="" width="88" height="88">
         <h2>Local by design</h2>
         <p>
-          The CabinCast viewer route stays on your iPhone and the devices
-          connected to its Personal Hotspot during a viewing session.
+          During use, CabinCast keeps screen sharing between your iPhone and the
+          devices connected to its Personal Hotspot.
         </p>
         <a class="button secondary" href="support.html">Support</a>
       </aside>

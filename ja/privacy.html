@@ -6,6 +6,7 @@
   <title>CabinCast プライバシーポリシー</title>
   <meta name="description" content="CabinCast のプライバシーポリシー。">
   <link rel="icon" href="../assets/cabincast-icon.png">
+  <script src="../language.js"></script>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -20,11 +21,15 @@
         <a href="support.html">サポート</a>
         <a href="privacy.html" aria-current="page">プライバシー</a>
       </nav>
-      <label class="language-picker">
-        <span>言語</span>
-        <select aria-label="言語セレクター" onchange="if (this.value) window.location.href = this.value">
-          <option value="../privacy.html">English</option>
-          <option value="privacy.html" selected>日本語</option>
+      <label class="language-picker" title="言語">
+        <span class="sr-only">言語</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M3.6 9h16.8M3.6 15h16.8M12 3c2.3 2.4 3.5 5.4 3.5 9s-1.2 6.6-3.5 9M12 3c-2.3 2.4-3.5 5.4-3.5 9s1.2 6.6 3.5 9"></path>
+        </svg>
+        <select aria-label="言語セレクター" onchange="CabinCastLanguage.setLanguage(this.selectedOptions[0].lang, this.value)">
+          <option value="../privacy.html" lang="en">English</option>
+          <option value="privacy.html" lang="ja" selected>日本語</option>
         </select>
       </label>
     </div>
@@ -33,16 +38,18 @@
   <main>
     <section class="page-hero privacy-hero">
       <div>
-        <h1>プライバシーポリシー</h1>
+        <h1>
+          <span class="ja-line">プライバシー</span>
+          <span class="ja-line">ポリシー</span>
+        </h1>
         <p>
-          CabinCast は iPhone 上でローカルに動作するよう設計されています。
-          iPhone のパーソナルホットスポットに接続されたデバイスへローカルビューアページを配信し、
-          画面内容を CabinCast のサーバーへアップロードしません。
+          CabinCastは、iPhoneとパーソナルホットスポットに接続されたデバイスの間で
+          画面共有するためのアプリです。画面内容をCabinCastのクラウドサーバーへアップロードしません。
         </p>
       </div>
       <aside class="url-tile quiet">
         <span>有効日</span>
-        <strong>2026年6月16日</strong>
+        <strong>2026年6月18日</strong>
       </aside>
     </section>
 
@@ -50,37 +57,55 @@
       <article class="legal-card">
         <h2>データ収集</h2>
         <p>
-          CabinCast は個人データを収集、販売、共有しません。アプリは iPhone 上でローカルに動作し、
-          iPhone のパーソナルホットスポットに接続されたデバイスへローカルビューアページを配信するよう設計されています。
+          CabinCastは個人データを販売しません。標準では、画面共有はお使いのiPhoneと、
+          そのパーソナルホットスポットに接続されたデバイスの間で行われます。匿名診断は標準でオフです。
+        </p>
+        <p>
+          匿名診断をオンにした場合、CabinCastは使用後に小さなキャストセッションサマリーを、
+          Supabase上でホストされているCabinCastのバックエンドへ送信することがあります。
+          これは標準設定、安定性、パフォーマンス傾向の改善に役立てるためのものです。
+          サマリーには、アプリのバージョン、大まかなデバイス分類、言語グループ、iOSバージョン、
+          選択したストリーミングモード、接続結果、フレーム数、ドロップ数、停止や遅延の回数、
+          熱状態などの性能情報が含まれる場合があります。
+        </p>
+        <p>
+          匿名診断には、画面内容、音声、URL、正確な位置情報、連絡先、Appleアカウント情報、
+          生のIPアドレス、Teslaアカウント情報は含まれません。
+        </p>
+        <p>
+          診断は設定からオフにでき、未送信の診断と匿名診断IDをリセットできます。
+          CabinCastは、アプリ内で最近の協力履歴を表示するために、アップロード済み診断サマリーの件数を
+          端末内に保存する場合があります。この件数は端末内に残ります。
         </p>
 
-        <h2>画面ブロードキャスト</h2>
+        <h2>画面共有</h2>
         <p>
-          CabinCast は iOS ReplayKit を使用して、画面をローカルの CabinCast ビューアへブロードキャストします。
-          画面ストリームはお使いのデバイスからローカルに配信されます。CabinCast は画面内容を CabinCast のサーバーへアップロードしません。
+          CabinCastはiOSの画面共有機能を使い、TeslaブラウザにiPhoneの画面を表示します。
+          CabinCastは画面内容をCabinCastのサーバーへアップロードしません。
         </p>
 
         <h2>ローカルネットワーク</h2>
         <p>
-          CabinCast は、iPhone のパーソナルホットスポット上の別デバイスからビューアページにアクセスできるよう、
-          ローカルネットワークアクセスを使用します。この通信はローカル表示セッションのために使われます。
+          CabinCastは、iPhoneのパーソナルホットスポットに接続された別のデバイスから
+          CabinCastページを開けるように、ローカルネットワークアクセスを使用します。
+          この通信は画面共有のためだけに使われます。
         </p>
 
         <h2>購入</h2>
         <p>
-          CabinCast は Apple の StoreKit システムを通じて、任意の Supporter Pack 購入を提供する場合があります。
-          購入処理は Apple によって処理されます。
+          CabinCastでは、AppleのStoreKitを通じて任意のSupporter Packを提供する場合があります。
+          購入処理はAppleによって行われます。
         </p>
 
         <h2>サポート</h2>
         <p>
-          サポートに連絡する場合、メールに含めた情報は問い合わせへの返信のためにのみ使用されます。
+          サポートへ連絡する場合、メールに含めた情報は問い合わせへの返信のためにのみ使用されます。
         </p>
 
         <h2>連絡先</h2>
         <p>
           このポリシーについての質問は
-          <a href="mailto:support@wirurun.com">support@wirurun.com</a>
+          <a href="mailto:cabincast-support@wirurun.com">cabincast-support@wirurun.com</a>
           までお送りください。
         </p>
       </article>
@@ -89,8 +114,8 @@
         <img src="../assets/cabincast-icon.png" alt="" width="88" height="88">
         <h2>ローカル設計</h2>
         <p>
-          CabinCast のビューア経路は、表示セッション中、お使いの iPhone と
-          そのパーソナルホットスポットに接続されたデバイスの間に留まります。
+          使用中の画面共有は、お使いのiPhoneと
+          そのパーソナルホットスポットに接続されたデバイスの間で行われます。
         </p>
         <a class="button secondary" href="support.html">サポート</a>
       </aside>
