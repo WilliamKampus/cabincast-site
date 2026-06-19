@@ -257,6 +257,14 @@ html:lang(ja) .page-hero h1 {
   transform: translateY(0.05em);
 }
 
+.free-word {
+  display: inline-block;
+  color: var(--ink);
+  font-size: 1.14em;
+  font-weight: 880;
+  line-height: 0.9;
+}
+
 .hero-copy p:not(.product-name),
 .page-hero p:not(.product-name) {
   max-width: 650px;
