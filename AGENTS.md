@@ -7,11 +7,8 @@ This repository is the public website for CabinCast.
 - `WilliamKampus/cabincast-site` is the public website repository. Use it for
   public pages, website assets, `CNAME`, language switching, privacy/support
   pages, and anything that should deploy to the public website.
-- `WilliamKampus/CabinCast` is the private app-development repository. Use it
-  for iOS app code, Xcode projects, extensions, diagnostics/backend schema,
-  TestFlight tooling, product docs, and internal engineering notes.
-- Keep app source, backend SQL, credentials, TestFlight files, and internal
-  engineering docs out of this repository.
+- Keep this repository focused on the public site. Do not commit credentials
+  or private development material.
 
 ## Validation
 
